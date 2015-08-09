@@ -19,8 +19,6 @@ gem 'kaminari'
 
 gem 'wicked'
 
-gem 'bootstrap_form'
-
 gem  'faker'
 
 # Use Uglifier as compressor for JavaScript assets
