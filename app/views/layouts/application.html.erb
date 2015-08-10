@@ -16,13 +16,21 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a><i class="glyphicon glyphicon-home"></i>Home <span class="sr-only">(current)</span></a></li>
+        <li class="active"><i class="glyphicon glyphicon-home"><%= link_to"Home", root_path %></i></li>
         <li><a><i class="glyphicon glyphicon-bell"></i>Notifications</a></li>
         <li><a><i class="glyphicon glyphicon-envelope"></i>Messages</a></li>
       </ul>
-      <div>
-
-      </div>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+          </button>
+            <a class="navbar-brand" href="#">Brand</a>
+    </div>
       <div>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
@@ -30,17 +38,6 @@
         <% end %>
           <li><a class="btn btn-info" href="#" role="button">Whoot</a></li>
       </ul>
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-          <a class="navbar-brand" href="#">icon</a>
-      </div>
-        </button>
-          <a class="navbar-brand" href="#">Brand</a>
       </div>
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -55,7 +52,7 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-
+<%= link_to 'New Post', new_post_path %>
 
 
 

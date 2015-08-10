@@ -1,27 +1,19 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Whoot</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="panel left">
+  <h1>Whoots</h1>
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.whoot %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <div class="whootWrapper">
+        <a href="<%= user_path post.user %>">
+        </a>
+          @<%= post.user.username %>
+          <span class="time"><%= time_ago_in_words(post.created_at) %></span>
+          <p> <%= post.whoot %> </p>
+          <p><%= link_to 'Show', post %></p>
+          <p><%= link_to 'Edit', edit_post_path(post) %></p>
+          <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+  <% end %>
+</div>
 
-<br>
 
 <%= link_to 'New Post', new_post_path %>
