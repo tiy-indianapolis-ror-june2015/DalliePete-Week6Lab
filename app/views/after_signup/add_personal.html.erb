@@ -1,0 +1,33 @@
+<p>
+  Personal
+</p>
+<%= form_for(@user, :url => wizard_path, :method => :put) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.text_area :username, :placeholder => 'username' %>
+  </div>
+  <div class="field">
+    <%= f.text_area :first_name, :placeholder => 'First Name' %>
+  </div>
+  <div class="field">
+    <%= f.text_area :last_name, :placeholder => 'Last Name' %>
+  </div>
+  <div class="field">
+    <%= f.text_area :telephone_number, :placeholder => 'Telephone Number' %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Next' %>
+  </div>
+<% end %>
+
+<%= link_to 'Skip', next_wizard_path%>
