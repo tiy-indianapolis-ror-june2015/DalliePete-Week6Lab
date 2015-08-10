@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -56,8 +57,14 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+</header>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+  <div class="container">
+
+    <!-- user info -->
+    <div class="row-1">
+      <div class="col-xs-3">
 
   <% if current_user %>
     <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
@@ -65,5 +72,8 @@
 
 <%= yield %>
 
+      </div>
+    </div>
+  </div>
 </body>
 </html>
