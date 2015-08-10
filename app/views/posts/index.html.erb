@@ -3,14 +3,16 @@
   <h1>Whoots</h1>
     <% @posts.each do |post| %>
       <div class="whootWrapper">
+        <p> <%= post.whoot %> </p>
         <a href="<%= user_path post.user %>">
         </a>
           @<%= post.user.username %>
           <span class="time"><%= time_ago_in_words(post.created_at) %></span>
-          <p> <%= post.whoot %> </p>
-          <p><%= link_to 'Show', post %></p>
-          <p><%= link_to 'Edit', edit_post_path(post) %></p>
-          <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <ul>
+            <li><%= link_to 'Show', post %></li>
+            <li><%= link_to 'Edit', edit_post_path(post) %></li>
+            <li><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          </ul>
       </div>
   <% end %>
 </div>
