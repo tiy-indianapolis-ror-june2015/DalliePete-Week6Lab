@@ -12,7 +12,7 @@ gem 'sass-rails', '~> 5.0'
 
 gem 'devise'
 
-gem "acts_as_follower"
+gem 'acts_as_follower'
 
 gem 'kaminari'
 
