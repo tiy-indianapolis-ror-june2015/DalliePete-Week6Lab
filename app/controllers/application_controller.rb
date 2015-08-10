@@ -15,7 +15,5 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :facebook
   end
 
-  def after_sign_up_path_for(resource)
-   after_signup_path(resource)
-  end
+  
 end
