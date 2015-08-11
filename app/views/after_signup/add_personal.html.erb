@@ -26,8 +26,8 @@
     <%= f.text_area :telephone_number, :placeholder => 'Telephone Number' %>
   </div>
   <div class="actions">
-    <%= f.submit 'Next' %>
+    <%= f.submit 'Save and Next' %> # will move to the next page
   </div>
 <% end %>
 
-<%= link_to 'Skip', next_wizard_path%>
+<%= link_to 'Skip', next_wizard_path%> # will skip this step
