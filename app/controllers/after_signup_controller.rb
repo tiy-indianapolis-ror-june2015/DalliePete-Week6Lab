@@ -9,7 +9,7 @@ class AfterSignupController < ApplicationController
 
     @user = current_user
 
-    render _wizard
+    render_wizard
 
   end
 
@@ -19,8 +19,12 @@ class AfterSignupController < ApplicationController
 
     @user.update_attributes(params[:user])
 
-    render _wizard
+    render_wizard
 
+  end
+
+  def redirect_to_finish_wizard
+    redirect_to root_url, notice: "Thank you for signing up."
   end
 
 end
