@@ -16,7 +16,6 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = current_user.posts.new
-    
   end
 
   # GET /posts/1/edit
@@ -61,6 +60,24 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def follow
+    @post = Post.find(params[:id])
+    current_user.follow(@post.user)
+    redirect_to :back
+  end
+
+  def unfollow
+    @post = Post.find(params[:id])
+    current_user.stop_following(@post.user)
+    redirect_to :back
+  end
+
+  def unblock
+    @post = Post.find(params[:id])
+    current_user.unblock(@post.user)
+    redirect_to :back
   end
 
   private
