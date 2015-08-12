@@ -2,12 +2,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {:registrations => "users/registrations"}
   resources :posts
 
-  resources :users do
-    member do
-      get :follow
-      get :unfollow
-    end
-  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -17,6 +11,9 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   resources :after_signup
+
+  post 'posts/follow' => 'posts#follow', as: :follow
+  post 'posts/unfollow' => 'posts#unfollow', as: :unfollow
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

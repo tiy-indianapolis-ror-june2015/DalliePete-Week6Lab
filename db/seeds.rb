@@ -22,7 +22,6 @@ end
     a = Post.new
     a.whoot = Faker::Lorem.paragraph(2)
     a.created_at = Faker::Date.between(15.days.ago, Date.today)
-    a.user_id = n
     a.save
 
   end
