@@ -1,0 +1,36 @@
+<header>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a><i class="glyphicon glyphicon-home"></i>Home <span class="sr-only">(current)</span></a></li>
+        <li><a><i class="glyphicon glyphicon-bell"></i>Notifications</a></li>
+        <li><a><i class="glyphicon glyphicon-envelope"></i>Messages</a></li>
+        </li>
+      </ul>
+      </div>
+      <div class="navbar-header">
+          <a class="navbar-brand" href="#">Brand</a>
+      </div>
+      <div class="nav navbar-nav navbar-right">
+        <button type="button" class="btn btn-info navbar-btn">
+          <a><%= link_to "Whoot", new_post_path %></a>
+        </button>
+      </div>
+      <div class="navbar-right">
+        <button type="button" class="btn btn-info navbar-btn">
+          <% if current_user %>
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          <% end %>
+        </button>
+      </div>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      </div><!-- /.navbar-collapse -->
+  </nav>
+</header>
