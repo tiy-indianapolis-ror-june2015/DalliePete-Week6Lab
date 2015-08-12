@@ -5,8 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-800.times do |n|
-    a = Account.new
+# def make_user
+100.times do |n|
+    a = User.new
     a.username  = Faker::Internet.user_name
     a.first_name =  Faker::Name.first_name
     a.last_name =  Faker::Name.last_name
@@ -14,6 +15,17 @@
     a.telephone_number = Faker::PhoneNumber.phone_number
     a.password = Faker::Internet.password(8)
     a.whoot = Faker::Lorem.paragraph(2)
-
+    a.created_at = Faker::Date.between(15.days.ago, Date.today)
     a.save
 end
+
+
+# def make_follow
+50.times do |n|
+  users = User.all
+  user  = users.first
+  following = users[2..50]
+  followers = users[3..40]
+  following.each { |followed| user.follow(followed) }
+  followers.each { |follower| follower.follow(user) }
+ end
