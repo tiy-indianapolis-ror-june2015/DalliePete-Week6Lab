@@ -14,7 +14,15 @@
     a.email =  Faker::Internet.email
     a.telephone_number = Faker::PhoneNumber.phone_number
     a.password = Faker::Internet.password(8)
-    a.whoot = Faker::Lorem.paragraph(2)
-    a.created_at = Faker::Date.between(15.days.ago, Date.today)
+
     a.save
 end
+
+10.times do |n|
+    a = Post.new
+    a.whoot = Faker::Lorem.paragraph(2)
+    a.created_at = Faker::Date.between(15.days.ago, Date.today)
+    a.user_id = n
+    a.save
+
+  end
