@@ -14,12 +14,17 @@
     a.email =  Faker::Internet.email
     a.telephone_number = Faker::PhoneNumber.phone_number
     a.password = Faker::Internet.password(8)
-    a.whoot = Faker::Lorem.paragraph(2)
     a.created_at = Faker::Date.between(15.days.ago, Date.today)
     a.save
+
+
+10.times do
+  whoot = Post.create(a.whoot = Faker::Lorem.paragraph(2))
+  whoot.created_at = Faker::Time.between(1000.days.ago, DateTime.now)
+  user.posts << whoot
+  end
+
 end
-
-
 # def make_follow
 50.times do |n|
   users = User.all
