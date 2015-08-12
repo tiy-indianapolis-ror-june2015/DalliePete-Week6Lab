@@ -17,10 +17,14 @@ class AfterSignupController < ApplicationController
 
     @user = current_user
 
-    @user.update_attributes(params[:user])
+    @user.update(user_params)
 
-    render_wizard
+    render_wizard @user
 
+  end
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :username, :telephone_number)
   end
 
   def redirect_to_finish_wizard

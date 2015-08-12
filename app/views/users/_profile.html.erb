@@ -1,0 +1,15 @@
+<div class="row1">
+  <div class=".col-md-3">
+      <% if current_user %>
+    <p> <%= current_user.first_name.last_name %> </p>
+    <p> @<%= current_user.username %> </p>
+      <div class="socialTotals">
+        <ul>
+          <li>Whoots<a> <%= current_user.posts.count %> </a></li>
+          <li>Following<a> <%= current_user.follow_count %> </a></li>
+          <li>Followers<a> <%= current_user.followers_count %> </a></li>
+        </ul>
+        <% end %>
+      </div>
+  </div>
+</div>
